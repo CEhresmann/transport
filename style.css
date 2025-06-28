@@ -4,10 +4,21 @@
     padding: 0;
 }
 
+:root {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --subtext-color: #b3b3b3;
+    --card-bg: #1f1f1f;
+    --card-border: #2a2a2a;
+    --accent: #3a7bd5;    /* синий оттенок */
+    --accent-hover: #559df6;
+    --shadow: rgba(0, 0, 0, 0.7);
+}
+
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7fa;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -18,8 +29,8 @@ body {
 }
 
 header {
-    background: linear-gradient(to right, #4b6cb7, #182848);
-    color: white;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: var(--text-color);
     padding: 40px 0;
     text-align: center;
 }
@@ -31,7 +42,7 @@ header h1 {
 
 .subtitle {
     font-size: 1.2em;
-    color: #dce1f3;
+    color: var(--subtext-color);
 }
 
 .card-grid {
@@ -45,20 +56,21 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: white;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 12px;
     overflow: hidden;
     text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: var(--text-color);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    box-shadow: 0 4px 12px var(--shadow);
 }
 
 .card img {
     width: 100%;
     height: 140px;
     object-fit: cover;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--card-border);
 }
 
 .card h2 {
@@ -70,22 +82,45 @@ header h1 {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    background-color: #f0f8ff;
+    box-shadow: 0 8px 20px var(--shadow);
+    border-color: var(--accent);
+    background-color: #292929;
 }
 
-
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    background-color: #eef3ff;
+.card:hover h2 {
+    color: var(--accent-hover);
 }
 
 footer {
-    background-color: #222;
-    color: #ccc;
+    background-color: #181818;
+    color: var(--subtext-color);
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
     font-size: 0.9em;
+}
+
+a {
+    color: var(--accent);
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* небольшие правки для таблиц на внутренних страницах */
+table {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+}
+th, td {
+    border: 1px solid var(--card-border);
+    padding: 8px;
+}
+th {
+    background: #2a2a2a;
+    color: var(--text-color);
+}
+td {
+    color: var(--text-color);
 }
