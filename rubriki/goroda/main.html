@@ -2,6 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Города области</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
@@ -15,51 +18,51 @@
 </header>
 <main class="container">
     <section class="card-grid">
-        <a class="card" href="svetlogorsk.html">
+        <a class="city-card" href="svetlogorsk.html">
             <div class="card-image" style="background-image: url('../../images/svetlogorsk.jpg');"></div>
             <h2>Светлогорск</h2>
         </a>
-        <a class="card" href="zelenogradsk.html">
+        <a class="city-card" href="zelenogradsk.html">
             <div class="card-image" style="background-image: url('../../images/zelenogradsk.jpg');"></div>
             <h2>Зеленоградск</h2>
         </a>
-        <a class="card" href="yantarny.html">
+        <a class="city-card" href="yantarny.html">
             <div class="card-image" style="background-image: url('../../images/yantarny.jpg');"></div>
             <h2>Янтарный</h2>
         </a>
-        <a class="card" href="baltiysk.html">
+        <a class="city-card" href="baltiysk.html">
             <div class="card-image" style="background-image: url('../../images/baltiysk.jpg');"></div>
             <h2>Балтийск</h2>
         </a>
-        <a class="card" href="baltkosa.html">
+        <a class="city-card" href="baltkosa.html">
             <div class="card-image" style="background-image: url('../../images/baltkosa.jpg');"></div>
             <h2>Балткоса</h2>
         </a>
-        <a class="card" href="pionersk.html">
+        <a class="city-card" href="pionersk.html">
             <div class="card-image" style="background-image: url('../../images/pionersk.jpg');"></div>
             <h2>Пионерск</h2>
         </a>
-        <a class="card" href="kurshskaya_kosa.html">
+        <a class="city-card" href="kurshskaya_kosa.html">
             <div class="card-image" style="background-image: url('../../images/kurshskaya_kosa.jpg');"></div>
             <h2>Куршская коса</h2>
         </a>
-        <a class="card" href="vishtunets.html">
+        <a class="city-card" href="vishtunets.html">
             <div class="card-image" style="background-image: url('../../images/vishtunets.jpg');"></div>
             <h2>Виштынец</h2>
         </a>
-        <a class="card" href="sovetsk.html">
+        <a class="city-card" href="sovetsk.html">
             <div class="card-image" style="background-image: url('../../images/sovetsk.jpg');"></div>
             <h2>Советск</h2>
         </a>
-        <a class="card" href="chernyahovsk.html">
+        <a class="city-card" href="chernyahovsk.html">
             <div class="card-image" style="background-image: url('../../images/chernyahovsk.jpg');"></div>
             <h2>Черняховск</h2>
         </a>
-        <a class="card" href="gusev.html">
+        <a class="city-card" href="gusev.html">
             <div class="card-image" style="background-image: url('../../images/gusev.jpg');"></div>
             <h2>Гусев</h2>
         </a>
-        <a class="card" href="zheleznodorozhny.html">
+        <a class="city-card" href="zheleznodorozhny.html">
             <div class="card-image" style="background-image: url('../../images/zheleznodorozhny.jpg');"></div>
             <h2>Железнодорожный</h2>
         </a>
@@ -70,13 +73,16 @@
         <p>&copy; 2025 Konigsberg сегодня | Сделано с ❤️</p>
     </div>
 </footer>
-<script src="../../vendor/jquery/jquery.min.js"></script>
-<script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="../../js/sidebar.js"></script>
-
-
-<aside class="sidebar" id="sidebar-container"></aside>
-<script src="../../js/sidebar.js"></script>
-
+<script src="/transport/vendor/jquery/jquery.min.js"></script>
+<script src="/transport/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    // sidebar.js inline, абсолютный путь:
+    document.addEventListener("DOMContentLoaded", () => {
+        fetch("/transport/includes/sidebar.html")
+            .then(r=>r.text())
+            .then(html=>document.getElementById("sidebar-container").innerHTML = html)
+            .catch(console.error);
+    });
+</script>
 </body>
 </html>
