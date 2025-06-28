@@ -68,12 +68,13 @@ header h1 {
 }
 footer {
     background-color: #222;
-    color: #ccc;
+    color: #888; /* Был #ccc, сделал светлее */
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
     font-size: 0.9em;
 }
+
 @media(max-width: 600px) {
     .card-grid {
         grid-template-columns: 1fr;
