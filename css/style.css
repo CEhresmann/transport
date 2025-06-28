@@ -251,9 +251,10 @@ footer {
 @media (max-width: 600px) {
     .card-grid,
     .rubrika-grid {
-        grid-template-columns: 2fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     .with-sidebar {
         flex-direction: column;
     }
 }
+
