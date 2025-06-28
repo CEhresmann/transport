@@ -1,9 +1,9 @@
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Города области</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="../../vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/style.css">
 </head>
@@ -16,8 +16,11 @@
         </nav>
     </div>
 </header>
-<main class="container">
-    <section class="card-grid">
+
+<main class="container with-sidebar">
+    <div class="main-content">
+        <section class="card-grid">
+            <!-- карточки городов -->
         <a class="city-card" href="svetlogorsk.html">
             <div class="card-image" style="background-image: url('../../images/svetlogorsk.jpg');"></div>
             <h2>Светлогорск</h2>
@@ -73,12 +76,12 @@
         <p>&copy; 2025 Konigsberg сегодня | Сделано с ❤️</p>
     </div>
 </footer>
-<script src="/transport/vendor/jquery/jquery.min.js"></script>
-<script src="/transport/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
 <script>
     // sidebar.js inline, абсолютный путь:
     document.addEventListener("DOMContentLoaded", () => {
-        fetch("/transport/includes/sidebar.html")
+        fetch("../../includes/sidebar.html")
             .then(r=>r.text())
             .then(html=>document.getElementById("sidebar-container").innerHTML = html)
             .catch(console.error);
