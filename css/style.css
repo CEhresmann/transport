@@ -81,66 +81,110 @@ footer {
 }
 
 /* Для страниц городов */
+/* --- общий контейнер для страницы города --- */
 .container {
     max-width: 800px;
-    margin: auto;
-    padding: 20px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 8px;
 }
 
+/* --- заголовок страницы города --- */
+header {
+    padding: 20px 0;
+    border-bottom: 2px solid #eee;
+}
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #182848;
+}
+
+/* --- ссылка обратно --- */
 .back-link {
     display: inline-block;
-    margin-bottom: 20px;
+    margin: 10px 0 30px;
     color: #3a7bd5;
-    text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 .back-link:hover {
     text-decoration: underline;
 }
 
+/* --- общий блок для каждого вида транспорта --- */
 .transport-card {
-    background: white;
+    background: #fafafa;
+    border: 1px solid #e3e8f0;
     border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    padding: 24px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.03);
 }
-
 .transport-card h2 {
-    margin-bottom: 12px;
-    font-size: 1.5em;
+    font-size: 1.6em;
+    margin-bottom: 16px;
     color: #182848;
 }
 
+/* --- таблица в карточке --- */
 .transport-card table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0 8px; /* вертикальные отступы между строк */
 }
-
 .transport-card th,
 .transport-card td {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
+    padding: 12px 16px;
     text-align: center;
+    background: #fff;
+    border: 1px solid #dde2ec;
 }
-
 .transport-card th {
-    background-color: #f0f4ff;
+    background: #eef4ff;
     font-weight: 600;
+    color: #1e2a78;
+}
+.transport-card tr td:first-child {
+    font-weight: 500;
 }
 
+/* --- немного больше пространства перед ссылкой "подробнее" --- */
 .more-info {
     text-align: center;
-    font-size: 0.95em;
+    margin-top: 24px;
+    font-size: 1em;
     color: #555;
 }
-
 .more-info a {
     color: #3a7bd5;
-    text-decoration: none;
     font-weight: 600;
 }
 .more-info a:hover {
     text-decoration: underline;
 }
 
+/* --- адаптив для маленьких экранов --- */
+@media (max-width: 600px) {
+    .transport-card table,
+    .transport-card th,
+    .transport-card td {
+        display: block;
+        width: 100%;
+    }
+    .transport-card th {
+        text-align: left;
+    }
+    .transport-card td {
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+    }
+    .transport-card td::before {
+        /* создаём псевдо-лейбл из заголовка колонки */
+        content: attr(data-label);
+        position: absolute;
+        left: 16px;
+        font-weight: 600;
+    }
+}
