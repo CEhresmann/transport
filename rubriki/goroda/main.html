@@ -1,7 +1,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Транспорт из Калининграда</title>
+    <title>Города области</title>
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
         </nav>
     </div>
 </header>
-<main class="container">
+<main class="container with-sidebar">
     <section class="card-grid">
         <a class="card" href="svetlogorsk.html">
             <div class="card-image" style="background-image: url('../../images/svetlogorsk.jpg');"></div>
@@ -70,6 +70,9 @@
         <p>&copy; 2025 Konigsberg сегодня | Сделано с ❤️</p>
     </div>
 </footer>
+<script src="../../vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../js/sidebar.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const imgs = document.querySelectorAll('.card-image[data-bg]');
