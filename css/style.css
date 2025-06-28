@@ -248,10 +248,10 @@ footer {
 /* ==========================================================================
    10. Адаптивные настройки
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .card-grid,
     .rubrika-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 2fr;
     }
     .with-sidebar {
         flex-direction: column;
