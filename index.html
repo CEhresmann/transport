@@ -1,87 +1,12 @@
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Транспорт из Калининграда</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<header>
-    <div class="container">
-        <h1>🚍 Транспорт из Калининграда</h1>
-    </div>
-</header>
 <main class="container">
-    <section class="card-grid">
-        <a class="card" href="goroda/svetlogorsk.html">
-            <div class="card-image" style="background-image: url('images/svetlogorsk.jpg');"></div>
-            <h2>Светлогорск</h2>
-        </a>
-        <a class="card" href="goroda/zelenogradsk.html">
-            <div class="card-image" style="background-image: url('images/zelenogradsk.jpg');"></div>
-            <h2>Зеленоградск</h2>
-        </a>
-        <a class="card" href="goroda/yantarny.html">
-            <div class="card-image" style="background-image: url('images/yantarny.jpg');"></div>
-            <h2>Янтарный</h2>
-        </a>
-        <a class="card" href="goroda/baltiysk.html">
-            <div class="card-image" style="background-image: url('images/baltiysk.jpg');"></div>
-            <h2>Балтийск</h2>
-        </a>
-        <a class="card" href="goroda/baltkosa.html">
-            <div class="card-image" style="background-image: url('images/baltkosa.jpg');"></div>
-            <h2>Балткоса</h2>
-        </a>
-        <a class="card" href="goroda/pionersk.html">
-            <div class="card-image" style="background-image: url('images/pionersk.jpg');"></div>
-            <h2>Пионерск</h2>
-        </a>
-        <a class="card" href="goroda/kurshskaya_kosa.html">
-            <div class="card-image" style="background-image: url('images/kurshskaya_kosa.jpg');"></div>
-            <h2>Куршская коса</h2>
-        </a>
-        <a class="card" href="goroda/vishtunets.html">
-            <div class="card-image" style="background-image: url('images/vishtunets.jpg');"></div>
-            <h2>Виштынец</h2>
-        </a>
-        <a class="card" href="goroda/sovetsk.html">
-            <div class="card-image" style="background-image: url('images/sovetsk.jpg');"></div>
-            <h2>Советск</h2>
-        </a>
-        <a class="card" href="goroda/chernyahovsk.html">
-            <div class="card-image" style="background-image: url('images/chernyahovsk.jpg');"></div>
-            <h2>Черняховск</h2>
-        </a>
-        <a class="card" href="goroda/gusev.html">
-            <div class="card-image" style="background-image: url('images/gusev.jpg');"></div>
-            <h2>Гусев</h2>
-        </a>
-        <a class="card" href="goroda/zheleznodorozhny.html">
-            <div class="card-image" style="background-image: url('images/zheleznodorozhny.jpg');"></div>
-            <h2>Железнодорожный</h2>
-        </a>
+    <section class="rubrika-grid">
+        <a href="rubriki/kaliningrad.html" class="rubrika-card">🏙️ Старый и новый Калининград</a>
+        <a href="rubriki/bfu-pravitelstvo.html" class="rubrika-card">🏛️ БФУ и правительство области</a>
+        <a href="rubriki/goroda/main.html" class="rubrika-card">🚍 Янтарный, Пионерск и область</a>
+        <a href="rubriki/business.html" class="rubrika-card">💼 Бизнес</a>
+        <a href="rubriki/kultura.html" class="rubrika-card">🎭 Культура</a>
+        <a href="rubriki/food.html" class="rubrika-card">👨‍🍳 Еда</a>
+        <a href="rubriki/showbiz.html" class="rubrika-card">🎤 Шоубизнес</a>
+        <a href="rubriki/sport.html" class="rubrika-card">⚽ Спорт</a>
     </section>
 </main>
-<footer>
-    <div class="container">
-        <p>&copy; 2025 Транспорт Калининградской области | Сделано с ❤️</p>
-    </div>
-</footer>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const imgs = document.querySelectorAll('.card-image[data-bg]');
-        const io = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                const el = entry.target;
-                el.style.backgroundImage = `url('${el.dataset.bg}')`;
-                el.removeAttribute('data-bg');
-                obs.unobserve(el);
-            });
-        }, { rootMargin: '200px' });
-        imgs.forEach(el => io.observe(el));
-    });
-</script>
-
-</body>
-</html>
